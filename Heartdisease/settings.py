@@ -24,12 +24,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 import os
 
-
-ALLOWED_HOSTS = [".vercel.app"]
+ALLOWED_HOSTS = os.environ.get("RENDER_EXTERNAL_HOSTNAME") and [os.environ["RENDER_EXTERNAL_HOSTNAME"]] or ["localhost", "127.0.0.1"]
+# ALLOWED_HOSTS = ['*']
 from decouple import config
 
 # ALLOWED_HOSTS = config('ALLOWED_HOSTS').split(',')
