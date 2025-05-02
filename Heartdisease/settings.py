@@ -27,9 +27,7 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'heart-disease-predictor-z9ss.onrender.com',
-    '127.0.0.1',
-    'localhost'
+    'heart-disease-predictor-z9ss.onrender.com'
 ]
 # ALLOWED_HOSTS = ['*']
 from decouple import config
